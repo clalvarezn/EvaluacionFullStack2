@@ -26,4 +26,5 @@ Requiere BD creadas:
   Queda adjunto el diagrama del proyecto, enlace a continuación
   https://app.diagrams.net/#G1LAPTJV7VHUAr4bvqXEgU4HWIx5dAxKzM#%7B%22pageId%22%3A%22ZDihKL3xxQLznNPfC4Ct%22%7D
 
-  Versión 1.1
+
+  Versión 1.2 (cambio en mensajes de errores producto)
