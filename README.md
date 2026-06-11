@@ -1,7 +1,7 @@
 # EvaluacionFullStack2
 Integrantes:
 
-- CLaudio Álvarez
+- Claudio Álvarez
 - Gabriel Barrera
 - Jean Paul Indey
 
