@@ -1,0 +1,10 @@
+{
+  "nombreProducto": "Polerón Hoodie Negro Lovable",
+  "descripcion": "Polerón de algodón premium con capucha y bolsillo canguro, ideal para invierno.",
+  "talla": "L",
+  "color": "Negro",
+  "precio": 29990,
+  "imagen": "https://LovableEcomerce/catalogo/productos/hoodie-negro.jpg",
+  "estadoProducto": true,
+  "stockActual": 45
+}
