@@ -1,7 +1,7 @@
 package com.lovable.producto_service.controller;
 
 import com.lovable.producto_service.dto.ProductoRequestDTO;
-import com.lovable.producto_service.dto.ProductoResponseDTO; // Importamos tu DTO de respuesta
+import com.lovable.producto_service.dto.ProductoResponseDTO;
 import com.lovable.producto_service.service.ProductoServiceImpl;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +17,7 @@ public class ProductoController {
     @Autowired
     private ProductoServiceImpl productoService;
 
-    // 1. OBTENER TODOS (Retorna lista de DTOs)
+    // 1. Obtener todos (Retorna lista de preoducto)
     @GetMapping
     public ResponseEntity<List<ProductoResponseDTO>> lista(){
         List<ProductoResponseDTO> productos = productoService.obtenerTodos();
@@ -27,14 +27,14 @@ public class ProductoController {
         return ResponseEntity.ok(productos);
     }
 
-    // 2. CREAR PRODUCTO (Retorna el DTO del producto creado)
+    // 2. Crear producto
     @PostMapping
-    public ResponseEntity<ProductoResponseDTO> guardar(@RequestBody @Valid ProductoRequestDTO request) {
+    public ResponseEntity<ProductoResponseDTO> guardar(@Valid @RequestBody ProductoRequestDTO request) {
         ProductoResponseDTO productoNuevo = productoService.crear(request);
         return ResponseEntity.status(HttpStatus.CREATED).body(productoNuevo);
     }
 
-    // 3. BUSCAR POR ID (Retorna el DTO)
+    // 3. Buscar por ID
     @GetMapping("/{idProducto}")
     public ResponseEntity<ProductoResponseDTO> buscar(@PathVariable Integer idProducto){
         try{
@@ -45,9 +45,9 @@ public class ProductoController {
         }
     }
 
-    // 4. ACTUALIZAR (Retorna el DTO actualizado)
+    // 4. Actualizar
     @PutMapping("/{idProducto}")
-    public ResponseEntity<ProductoResponseDTO> actualizar(@PathVariable Integer idProducto, @RequestBody @Valid ProductoRequestDTO request) {
+    public ResponseEntity<ProductoResponseDTO> actualizar(@PathVariable Integer idProducto, @Valid @RequestBody ProductoRequestDTO request) {
         try {
             ProductoResponseDTO productoActualizado = productoService.actualizar(idProducto, request);
             return ResponseEntity.ok(productoActualizado);
@@ -56,7 +56,7 @@ public class ProductoController {
         }
     }
 
-    // 5. ELIMINAR (Se mantiene igual, no retorna cuerpo)
+    // 5. Eliminar (Se mantiene igual pero cambia el estado a FALSO)
     @DeleteMapping("/{idProducto}")
     public ResponseEntity<Void> eliminar(@PathVariable Integer idProducto) {
         try {
@@ -67,7 +67,7 @@ public class ProductoController {
         }
     }
 
-    // 6. ACTUALIZAR STOCK (Se mantiene igual)
+    // 6. Actualizar (Se mantiene igual del stock)
     @PatchMapping("/{idProducto}/stock")
     public ResponseEntity<?> modificarStock(
             @PathVariable Integer idProducto,
