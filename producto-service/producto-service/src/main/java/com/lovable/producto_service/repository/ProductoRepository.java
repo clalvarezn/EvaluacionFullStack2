@@ -6,8 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ProductoRepository extends JpaRepository<Producto, Integer> {
-
-    // Por ahora no necesitamos métodos personalizados, JpaRepository ya nos da todo el CRUD.
-
-
+    // Esta es una interface para el service
 }
