@@ -103,7 +103,7 @@ public class ProductoServiceImpl implements IProductoService {
         if (nuevoStock < 0) {
 
             // Usamos log error para alertar que algo falló en las reglas del negocio
-            log.error("❌ ERROR STOCK: Intento de stock negativo para producto ID: {}", idProducto);
+            log.error("ERROR STOCK: Intento de stock negativo para producto ID: {}", idProducto);
 
             throw new RuntimeException("No hay suficiente stock para el producto: " + producto.getNombreProducto());
         }
@@ -124,7 +124,7 @@ public class ProductoServiceImpl implements IProductoService {
     }
 
     // ==========================================
-    // 🛠️ MÉTODO AUXILIAR TRANSFORMADOR (MAPPER)
+    //  MÉTODO AUXILIAR TRANSFORMADOR (MAPPER)
     // ==========================================
     private ProductoResponseDTO convertirADTO(Producto producto) {
         ProductoResponseDTO dto = new ProductoResponseDTO();
